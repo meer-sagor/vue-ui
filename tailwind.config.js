@@ -66,9 +66,42 @@ export default {
           50: '#FFF3E0'
         }
       },
+      spacing: {
+        space5: '0.5rem',
+        space8: '0.8rem',
+        space12: '1.2rem',
+        space16: '1.6rem',
+        space20: '2rem',
+        space24: '2.4rem',
+        space28: '2.8rem',
+        space30: '3rem',
+        space32: '3.2rem',
+        space34: '3.4rem',
+        space40: '4rem'
+      },
       fontSize: {
         base: '62.5%',
         normal: '1.6rem'
+      },
+      fontWeight: {
+        normal: '400',
+        semibold: '600',
+        bold: '700',
+        extrabold: '800'
+      },
+      fontFamily: {
+        nunito: ['Nunito Sans', 'sans-serif']
+      },
+      boxShadow: {
+        DEFAULT:
+          '0px 12px 42px -4px rgba(24, 39, 75, 0.12), 0px 8px 18px -6px rgba(24, 39, 75, 0.12)',
+        100: '0px 4px 4px -2px rgba(24, 39, 75, 0.08), 0px 2px 4px -2px rgba(24, 39, 75, 0.12)',
+        200: '0px 8px 8px -4px rgba(24, 39, 75, 0.08), 0px 4px 6px -4px rgba(24, 39, 75, 0.12)',
+        300: '0px 8px 16px -6px rgba(24, 39, 75, 0.08), 0px 6px 8px -6px rgba(24, 39, 75, 0.12)',
+        400: '0px 8px 24px -4px rgba(24, 39, 75, 0.08), 0px 6px 12px -6px rgba(24, 39, 75, 0.12)',
+        500: '0px 10px 32px -4px rgba(24, 39, 75, 0.10), 0px 6px 14px -6px rgba(24, 39, 75, 0.12)',
+        700: '0px 14px 64px -4px rgba(24, 39, 75, 0.12), 0px 8px 22px -6px rgba(24, 39, 75, 0.12)',
+        800: '0px 18px 88px -4px rgba(24, 39, 75, 0.14), 0px 8px 28px -6px rgba(24, 39, 75, 0.12)'
       }
     }
   },
@@ -76,8 +109,36 @@ export default {
     require('@tailwindcss/forms'),
     plugin(function ({ addBase, theme }) {
       addBase({
-        html: { fontSize: theme('fontSize.base') },
-        body: { fontSize: theme('fontSize.normal') }
+        html: { fontSize: theme('fontSize.base'), scrollBehavior: 'smooth' },
+        body: {
+          fontSize: theme('fontSize.normal'),
+          fontFamily: theme('fontFamily.nunito')
+        },
+        h1: {
+          fontFamily: theme('fontFamily.nunito'),
+          fontSize: '2.4rem',
+          lineHeight: '3.4rem'
+        },
+        h2: {
+          fontFamily: theme('fontFamily.nunito'),
+          fontSize: '2.2rem',
+          lineHeight: '3.5rem'
+        },
+        h3: {
+          fontFamily: theme('fontFamily.nunito'),
+          fontSize: '2rem',
+          lineHeight: '3.2rem'
+        },
+        h4: {
+          fontFamily: theme('fontFamily.nunito'),
+          fontSize: '1.8rem',
+          lineHeight: '2.9rem'
+        },
+        h5: {
+          fontFamily: theme('fontFamily.nunito'),
+          fontSize: '1.6rem',
+          lineHeight: '2.6rem'
+        }
       })
     })
   ]
